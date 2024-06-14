@@ -1,0 +1,24 @@
+{% extends "escola/base.html"  %}
+
+
+
+{% block conteudo %} 
+  <div class="card">
+     <div class="card-header">
+        Você tem certeza que deseja remover a escola abaixo?
+     </div>
+
+     <div class="card-body">
+        <h4 class="card-title"> id: {{ escola.id}} </h4>
+        <h5> nome: {{ escola.nome }}</h5>
+        <h5> nome: {{ escola.telefone}}</h5>
+     </div>
+
+     <form method="post">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <button class="btn btn-danger" type="submit">Remover</button>
+
+     </form>
+
+  </div>
+{% endblock conteudo %} 

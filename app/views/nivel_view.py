@@ -18,7 +18,7 @@ def cadastrar_nivel():
            return redirect(url_for('listar_niveis'))
        except:
          print("nivel não cadastrado")
-      return render_template("nivel/form_nivel.html",form=form,editar=False)
+      return render_template("nivel/form_nivel.html",form=form,Editar=False)
 
 
 
@@ -48,7 +48,7 @@ def editar_nivel(id):
       except:
           print("o cliente não foi editado")
          
-   return render_template("nivel/form_nivel.html",form=form,editar=True)
+   return render_template("nivel/form_nivel.html",form=form,Editar=True)
 
 @app.route("/removernivel/<int:id>",methods=["POST","GET"])
 def remover_nivel(id):

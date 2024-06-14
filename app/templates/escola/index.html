@@ -1,0 +1,21 @@
+{% extends "escola/base.html" %}
+{% block conteudo %}
+<div class="container col-4">
+    <form method="post">
+        {{ form.csrf_token }}
+        <div class="form-group">
+            <label for="nome">Informe o nome da escola</label>
+            {{ form.nome(class="form-control", id="nome") }} 
+            <label for="telefone">Informe o telefone da escola</label>
+            {{ form.telefone(class="form-control", id="telefone") }}          
+        </div>
+        <button type="submit" class="btn btn-primary">{{ 'Editar' if editar else 'Cadastrar' }}</button>
+    </form>
+</div>
+{% if request.method == 'POST' %}
+<script>
+    // Limpa o campo de texto após o envio do formulário
+    document.getElementById("nome").value = "";
+</script>
+{% endif %}
+{% endblock conteudo %}

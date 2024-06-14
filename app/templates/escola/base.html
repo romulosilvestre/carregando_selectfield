@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Escola</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+</head>
+
+<body>
+
+    <ul class="nav flex-column">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{url_for('cadastrar_escola')}}">Escola</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{url_for('listar_escolas')}}">Todas Escolas</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Turma</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Módulo</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Aluno</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Diário</a>
+        </li>
+    </ul>
+    {% block conteudo %}
+
+
+    {% endblock conteudo %}
+
+</body>
+
+</html>

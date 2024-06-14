@@ -1,0 +1,32 @@
+{% extends "escola/base.html"  %}
+
+
+
+{% block conteudo %} 
+    
+    
+    <div class="container mt-5">       
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Editar</th>
+                    <th>Excluir</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for escola in escolas %}
+                    <tr>
+                        <td>{{ escola.id }}</td>
+                        <td><a href="{{url_for('listar_escola',id=escola.id)}}">{{ escola.nome }}</a></td>
+                        <td><a href="{{url_for('editar_escola',id=escola.id)}}">alterar</a></td>
+                        <td><a href="{{url_for('remover_escola',id=escola.id)}}">remover</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{{url_for('cadastrar_escola')}}"> <button type="submit" class="btn btn-primary">Cadastrar</button></a>
+       
+    </div>
+{% endblock conteudo %} 

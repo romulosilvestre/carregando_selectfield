@@ -1,0 +1,17 @@
+{% extends "escola/base.html"  %}
+
+
+{% block conteudo %} 
+  <div class="card">
+     <div class="card-header">
+        Dados da Escola
+     </div>
+
+     <div class="card-body">
+        <h4 class="card-title"> id: {{ escola.id}} </h4>
+        <h5> nome: {{ escola.nome }}</h5>
+        <h5> nome: {{ escola.telefone }}</h5>
+     </div>
+
+  </div>
+{% endblock conteudo %} 
