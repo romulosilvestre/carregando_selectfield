@@ -29,6 +29,7 @@ from .views import nivel_view
 from .views import usuario_view
 from .views import escola_view
 from .views import curso_view
+from .views import aulajinja_view
 
 
 

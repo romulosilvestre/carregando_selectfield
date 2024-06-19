@@ -27,7 +27,7 @@
     <label>Nível</label>
     <select id="escola_id" name="escola_id" class="form-control">
         {% for id, nome in form_curso.escola_id.choices %}
-            <option value="{{ id }}">{{ nome }}</option>
+            <option value="{{ id }}">{{ nome|upper}}</option>
         {% endfor %}
     </select>    
 </div>

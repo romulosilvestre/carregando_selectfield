@@ -1,0 +1,10 @@
+
+{% extends "./escola/base.html"  %}
+
+{% block conteudo %}
+{{ super()}}
+<p>O valor do dado  é:</p>{{teste}}
+<p>O tipo da variável é:</p>{{teste.__class__.__name__}}
+
+{% endblock conteudo %}
+
