@@ -1,0 +1,19 @@
+.notebook-table{
+    table {
+        width: 100%;
+        color: blue;
+    }
+
+    table, th, td {
+        border: 4px solid rgb(22, 13, 148) !important;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+}

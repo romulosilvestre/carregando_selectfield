@@ -1,0 +1,40 @@
+<!--Como a escola é nossa primeira entidade, vou considera-la como base para as outras-->
+<!--Considerações sobre delimitadores do Jinja 2-->
+{% extends "./escola/base.html"  %}
+{# 
+    
+    Pode utilizar esses delimitadores para comentar nos templates
+    Outros delimitadores:
+    {%   %}  : usado para utilizar métodos python nos templates
+    {{   }}  : serve para concatenar variáveis aos templates 
+    
+#}
+
+{# vamos dar um exemplo simples: #}
+
+{#
+{% for i in range(10): %}
+    
+    <h1>estou no loop {{ i }}</h1>
+
+{% endfor%}
+
+#}
+
+{% block conteudo %}
+<div class="container col-4">
+<div class="form-group">
+    <label>Nível</label>
+    <select id="escola_id" name="escola_id" class="form-control">
+        {% for id, nome in form_curso.escola_id.choices %}
+            <option value="{{ id }}">{{ nome }}</option>
+        {% endfor %}
+    </select>    
+</div>
+{% endblock conteudo %}
+
+
+
+
+
+  
