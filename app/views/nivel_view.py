@@ -3,7 +3,7 @@ from flask import render_template,redirect,url_for,request #renderização
 from app.forms import nivel_form
 from app.models import nivel_model
 from app import db
-@app.route("/",methods=["POST","GET"])
+@app.route("/cadnivel",methods=["POST","GET"])
 def cadastrar_nivel():
       form = nivel_form.NivelForm()
       if form.validate_on_submit():

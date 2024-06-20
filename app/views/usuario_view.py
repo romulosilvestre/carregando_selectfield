@@ -22,11 +22,14 @@ def cadastrar_usuario():
     
     if form.validate_on_submit():
         nome = form.nome.data
-        nivel_id = form.nivel_id.data
         email = form.email.data
-        tecnico = Usuario(nome=nome,email=email,fk_nivel_id=nivel_id)
+        senha = form.senha.data
+        nivel_id = form.nivel_id.data
+        
+        usuario = Usuario(nome=nome,email=email,senha=senha,fk_nivel_id=nivel_id)
+        usuario.gen_senha()
         try:
-            db.session.add(tecnico)
+            db.session.add(usuario)
             db.session.commit()
             return redirect(url_for('listar_usuarios'))
         except Exception as e:

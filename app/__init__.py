@@ -4,7 +4,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate,upgrade
 from flask_wtf import CSRFProtect
-
+from flask_jwt_extended import JWTManager
 #criando o aplicativo
 app = Flask(__name__)
 #puxando o arquivo config.py
@@ -13,6 +13,7 @@ app.config.from_object('config')
 db = SQLAlchemy(app)
 #criar uma variável migrate e passar a instância da aplicação e do db
 migrate = Migrate(app,db)
+jwt = JWTManager(app)
 csrf = CSRFProtect(app)
 csrf.init_app(app)
 
@@ -30,6 +31,7 @@ from .views import usuario_view
 from .views import escola_view
 from .views import curso_view
 from .views import aulajinja_view
+from .views import login_view
 
 
 

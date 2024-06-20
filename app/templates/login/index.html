@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Projeto Piloto</title>
+</head>
+<body>
+    <header class="bg-dark text-white text-center py-4 mb-5">
+        <div class="container">
+            <h1 class="display-4">Sistema Base</h1>
+            <h6>Entre em nosso Sistema</h6>
+        </div>
+    </header>
+    
+    <div class="container">
+        <form method="post">
+            {{ form_login.csrf_token }}
+            <div class="form-group">
+                <label for="email">Email</label>
+                {{ form_login.email(class="form-control",id="email") }}                
+            </div>
+            <div class="form-group">
+                <label for="senha">Senha</label>
+                {{ form_login.senha(class="form-control",id="senha") }}                
+            </div>    
+            <button class="btn btn-primary" type="submit">Logar</button>
+      
+        </form>
+         <!-- Bloco para exibir mensagens flash -->
+         {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+             <div class="alert-container">
+                 {% for category, message in messages %}
+                     <div class="alert alert-{{ category }}">
+                         {{ message }}
+                     </div>
+                 {% endfor %}
+             </div>
+            {% endif %}
+         {% endwith %}
+
+        
+    </div>
+    {% if request.method == 'POST' %}
+      <script>
+       // Limpa o campo de texto após o envio do formulário
+       document.getElementById("email").value = "";
+     </script>
+{% endif %}
+
+
+ 
+</body>
+</html>
